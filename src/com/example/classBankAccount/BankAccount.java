@@ -2,11 +2,7 @@ package com.example.classBankAccount;
 
 import com.example.classCustomer.Customer;
 
-import java.awt.*;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
 
 public class BankAccount {
 
@@ -16,20 +12,18 @@ public class BankAccount {
     private Double cost;
     private Double reward;
     private Customer customer;
-    private List<Coin> coins = new ArrayList<>();
     private LocalDate createDate;
 
     public BankAccount() {
     }
 
-    public BankAccount(Long id, Double balance, TypeAccount typeAccount, Double cost, Double reward, Customer customer, List<Coin> coins, LocalDate createDate) {
+    public BankAccount(Long id, Double balance, TypeAccount typeAccount, Double cost, Double reward, Customer customer, LocalDate createDate) {
         this.id = id;
         this.balance = balance;
         this.typeAccount = typeAccount;
         this.cost = cost;
         this.reward = reward;
         this.customer = customer;
-        this.coins = coins;
         this.createDate = createDate;
     }
 
@@ -81,14 +75,6 @@ public class BankAccount {
         this.customer = customer;
     }
 
-    public List<Coin> getCoins() {
-        return coins;
-    }
-
-    public void setCoins(List<Coin> coins) {
-        this.coins = coins;
-    }
-
     public LocalDate getCreateDate() {
         return createDate;
     }
@@ -106,7 +92,6 @@ public class BankAccount {
                 ", cost=" + cost +
                 ", reward=" + reward +
                 ", customer=" + customer +
-                ", coins=" + coins +
                 ", createDate=" + createDate +
                 '}';
     }
