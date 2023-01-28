@@ -1,5 +1,6 @@
 package com.example.classBankAccount;
 
 public enum TypeAccount {
-    SAVINGS, INVESTMENT, BUSINESS
+    SAVINGS, INVESTMENT, BUSINESS;
+
 }

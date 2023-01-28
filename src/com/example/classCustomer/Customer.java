@@ -4,7 +4,7 @@ public class Customer {
 
     private Long id;
     private String name;
-    private String nif;
+    public static String nif;
 
     public Customer() {
     }
