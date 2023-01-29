@@ -1,18 +1,21 @@
 package com.example.classCustomer;
 
+import com.example.classAddress.Address;
+
 public class Customer {
 
     private Long id;
     private String name;
     public static String nif;
+    private Address address;
 
     public Customer() {
     }
 
-    public Customer(Long id, String name, String nif) {
+    public Customer(Long id, String name, Address address) {
         this.id = id;
         this.name = name;
-        this.nif = nif;
+        this.address = address;
     }
 
     public Long getId() {
@@ -39,12 +42,16 @@ public class Customer {
         this.nif = nif;
     }
 
+    public Address getAddress() { return address; }
+
+    public void setAddress(Address address) { this.address = address; }
+
     @Override
     public String toString() {
         return "Customer{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", nif='" + nif + '\'' +
+                ", address=" + address +
                 '}';
     }
 }

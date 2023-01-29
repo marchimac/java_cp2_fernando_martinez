@@ -1,7 +1,7 @@
 package com.example.classBankAccount;
-import com.example.classBank.Bank;
 
 import java.util.HashMap;
+import java.util.Map;
 import java.util.List;
 
 public interface BankAccountService {
@@ -19,20 +19,20 @@ public interface BankAccountService {
     List<BankAccount> findAllByType(TypeAccount value);
 
     // Buscar TODAS por moneda
-    // TODO no estoy seguro de que sea correcto
+    // TODO no se que debo usar como argumento
     List<BankAccount> findAllByCurrency();
 
     // Agrupar por tipo de cuenta
-    HashMap<TypeAccount, List<BankAccount>> accountHashMap = null;
+    Map<TypeAccount, List<BankAccount>> accountHashMap = new HashMap<>();
 
     // Crear cuenta nueva
     BankAccount create(BankAccount bankAccount);
 
     // Incrementar saldo de una cuenta obtenida por el ID
-    BankAccount increaseBalance(BankAccount bankAccountToIncrease);
+    BankAccount enterBalance(BankAccount bankAccountToEnter);
 
     // Retira saldo de una cuenta obtenida por ID
-    BankAccount decreaseBalance(BankAccount bankAccountToDecrease);
+    BankAccount withdrawBalance(BankAccount bankAccountToWithdraw);
 
     // Actualizar cuenta
     BankAccount update(BankAccount bankAccountUpdated);
@@ -40,7 +40,14 @@ public interface BankAccountService {
     // Borrar cuenta
     boolean removeById(Long id);
 
-    // Transpaso de una cuenta a otra
 
+    // Traspaso de una cuenta a otra
+    /**
+     * Trasferencia entre cuentas
+     * @param amount ES LA CANTIDAD QUE SE DESEA TRANSFERIR
+     * @param id ES EL ID DE LA CUENTA A DONDE SE DESEA ENVIAR LA CANTIDAD
+     * @return LLAMAMOS A withdrawBalance Y DESPUÉS A enterBalance
+     */
+    boolean transfer(Double amount, BankAccount id);
 
 }
